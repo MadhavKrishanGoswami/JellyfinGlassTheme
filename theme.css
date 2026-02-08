@@ -1,0 +1,325 @@
+/* ================================================= */
+/* 1. CORE DEPENDENCY: ELEGANTFIN                   */
+/* ================================================= */
+@import url("https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/ElegantFin-jellyfin-theme-build-latest-minified.css");
+
+/* ================================================= */
+/* 2. NETFLIX HERO BANNER (Solid Blend Fix)         */
+/* ================================================= */
+
+/* 1. Force Parent Containers to be Invisible */
+.homeSectionsContainer.editorsChoiceAdded,
+.editorsChoiceContainer {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin-top: -80px !important;
+    /* Keep it behind header */
+    padding: 0 !important;
+    overflow: visible !important;
+}
+
+/* 2. The Banner Itself */
+.editorsChoiceItemBanner {
+    height: 85vh !important;
+    /* Slightly shorter to ensure the black bar hits correctly */
+    width: 100% !important;
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background-color: #000000 !important;
+    /* Solid Black base */
+    background-position: center top !important;
+    background-size: cover !important;
+}
+
+/* 3. The "Paint" Gradient (The Blender) */
+/* This paints a solid black layer over the bottom of the image */
+.editorsChoiceItemBanner>div {
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.6) 0%,
+            /* Top Shadow for Header */
+            rgba(0, 0, 0, 0.0) 20%,
+            /* Crystal Clear Middle */
+            rgba(0, 0, 0, 0.4) 60%,
+            /* Start darkening */
+            #000000 98%,
+            /* Solid Black near bottom */
+            #000000 100%
+            /* Solid Black at bottom edge */
+        ) !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    align-items: flex-start !important;
+    padding-bottom: 60px !important;
+    padding-left: 4% !important;
+    backdrop-filter: none !important;
+    border: none !important;
+}
+
+/* Logo & Text Styling */
+.editorsChoiceItemLogo {
+    max-height: 25vh !important;
+    width: auto !important;
+    margin-bottom: 2vh !important;
+    filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.9));
+}
+
+.editorsChoiceItemOverview {
+    color: #dcdcdc !important;
+    font-size: 1.1rem !important;
+    line-height: 1.5 !important;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+    max-width: 45% !important;
+    margin-bottom: 25px !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* The Button */
+.editorsChoiceItemButton {
+    position: static !important;
+    display: inline-block !important;
+    background: #e0e0e0 !important;
+    color: #000000 !important;
+    font-size: 1.1rem !important;
+    font-weight: 800 !important;
+    border-radius: 4px !important;
+    padding: 12px 35px !important;
+    border: none !important;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.editorsChoiceItemButton:hover {
+    background: #ffffff !important;
+    transform: scale(1.05);
+}
+
+.editorsChoiceScrollButtonsContainer,
+.editorsChoiceItemRating {
+    display: none !important;
+}
+
+/* ================================================= */
+/* 3. OBSIDIAN MODE (Variables)                     */
+/* ================================================= */
+:root {
+    /* --- VOID PALETTE --- */
+    --darkerGradientPoint: #000000 !important;
+    --lighterGradientPoint: #000000 !important;
+    --headerColor: transparent !important;
+    --drawerColor: #0a0a0a !important;
+
+    /* --- ACCENTS --- */
+    --uiAccentColor: #e0e0e0 !important;
+    --activeColor: #e0e0e0 !important;
+    --activeColorAlpha: rgba(255, 255, 255, 0.1) !important;
+    --highlightOutlineColor: transparent !important;
+
+    /* --- KILL BLUES --- */
+    --btnSubmitColor: #262626 !important;
+    --btnSubmitBorderColor: #404040 !important;
+    --checkboxCheckedBgColor: #e0e0e0 !important;
+    --countIndicatorColor: #262626 !important;
+
+    /* --- TEXT --- */
+    --textColor: #dedede !important;
+    --dimTextColor: #777777 !important;
+
+    /* --- GEOMETRY --- */
+    --largeRadius: 14px !important;
+    --smallRadius: 8px !important;
+    --borderWidth: 0px !important;
+
+    /* --- TEXTURES --- */
+    --backgroundGradient: #000000 !important;
+    --cardBackgroundGradient: #0a0a0a !important;
+    --shadow: 0 20px 50px rgba(0, 0, 0, 0.9) !important;
+}
+
+/* ================================================= */
+/* 4. HEADER INVISIBILITY                           */
+/* ================================================= */
+.skinHeader,
+.skinHeader-blurred,
+.skinHeader-withBackground {
+    background: transparent !important;
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+/* ================================================= */
+/* 5. CARD INTERACTION (Borderless Lift)            */
+/* ================================================= */
+.cardScalable,
+.visualCardBox {
+    border: none !important;
+    box-shadow: none !important;
+    background: #0a0a0a !important;
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+.card:hover .cardScalable,
+.card:focus-within .cardScalable {
+    transform: scale(1.05) !important;
+    z-index: 9999 !important;
+    border-radius: 14px !important;
+    border: none !important;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9) !important;
+    filter: brightness(1.1);
+}
+
+.card:hover .cardText,
+.card:focus-within .cardText {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 1);
+}
+
+/* ================================================= */
+/* 6. INDICATOR CLEANUP                             */
+/* ================================================= */
+.countIndicator,
+.fullSyncIndicator,
+.mediaSourceIndicator {
+    background: #262626 !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #404040 !important;
+    box-shadow: none !important;
+}
+
+.playedIndicator {
+    background: transparent !important;
+    border: none !important;
+    color: #555555 !important;
+    box-shadow: none !important;
+}
+
+.itemProgressBar {
+    height: 3px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.itemProgressBarForeground {
+    background: #e0e0e0 !important;
+}
+
+.mdl-spinner__layer-1,
+.mdl-spinner__layer-2,
+.mdl-spinner__layer-3,
+.mdl-spinner__layer-4 {
+    border-color: #e0e0e0 !important;
+}
+
+/* ================================================= */
+/* 7. BUTTON & LINK CLEANUP (No Blue)               */
+/* ================================================= */
+.btnPlay.detailButton {
+    background-color: #e0e0e0 !important;
+    color: #000000 !important;
+    border: none !important;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1) !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+.btnPlay.detailButton:hover {
+    background-color: #ffffff !important;
+    transform: scale(1.05);
+}
+
+.detailButton:not(.btnPlay) {
+    color: #e0e0e0 !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.detailButton:not(.btnPlay):hover {
+    background: #ffffff !important;
+    color: #000000 !important;
+}
+
+.itemMiscInfo a,
+.textActionButton,
+.parentName a,
+.button-link {
+    color: #a0a0a0 !important;
+    text-decoration: none !important;
+}
+
+.itemMiscInfo a:hover,
+.textActionButton:hover {
+    color: #ffffff !important;
+}
+
+.starIcon {
+    color: #e0e0e0 !important;
+    background: transparent !important;
+}
+
+.mediaInfoOfficialRating {
+    border-color: #404040 !important;
+    color: #a0a0a0 !important;
+}
+
+/* ================================================= */
+/* 8. DETAIL PAGE BLACKOUT (Blue Tint Fix)          */
+/* ================================================= */
+
+/* Force all Detail Containers to Transparent/Black */
+.detailPagePrimaryContainer,
+.detailPageContent,
+.detailRibbon {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* The "Genre/Studio" Box (itemDetailsGroup) Fix */
+/* This was causing the blue box around metadata */
+.itemDetailsGroup {
+    background: rgba(0, 0, 0, 0.6) !important;
+    /* Dark glass */
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    /* Subtle grey border */
+    backdrop-filter: blur(10px);
+}
+
+/* Fix the links INSIDE the Genre box to be white/grey */
+.itemDetailsGroup .button-link,
+.itemDetailsGroup .detailsGroupItem,
+.itemDetailsGroup a {
+    color: #dcdcdc !important;
+}
+
+/* Override the theme's blue gradient on the detail wrapper */
+.detailPageWrapperContainer {
+    background: linear-gradient(0deg, #000000 85%, transparent) !important;
+    padding-top: 20vh !important;
+}
+
+/* Ensure the backdrop image fades into TRUE BLACK */
+.itemBackdrop::after {
+    background: linear-gradient(to bottom, transparent 0%, #000000 100%) !important;
+}
+
+/* Font Smoothing */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+div,
+span {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", sans-serif !important;
+    letter-spacing: -0.01em !important;
+    -webkit-font-smoothing: antialiased;
+}
