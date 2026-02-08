@@ -3,9 +3,7 @@
 /* ================================================= */
 /* ElegantFin Theme for Jellyfin by lscambo13 */
 
-/* Add-ons: Uncomment to enable */
-/* @import url(./assets/add-ons/media-bar-plugin-support-nightly.css); */
-/* @import url("https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/assets/add-ons/custom-media-covers-latest-min.css"); */
+
 
 /* Inter Font Family */
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
@@ -15,13 +13,13 @@
 
     /* Base theme colors */
     color-scheme: dark;
-    --darkerGradientPoint: #111827;
+    --darkerGradientPoint: #000000;
     --darkerGradientPointAlpha: rgba(17, 24, 39, 0.85);
-    --lighterGradientPoint: #1d2635;
+    --lighterGradientPoint: #000000;
     --lighterGradientPointAlpha: rgba(29, 38, 53, 0.85);
     --gradientPointAlpha: rgba(29, 38, 53, 0.3);
-    --headerColor: rgba(30, 40, 54, 0.8);
-    --drawerColor: rgba(30, 40, 54, 0.9);
+    --headerColor: transparent;
+    --drawerColor: #0a0a0a;
 
     --borderColor: hsl(214, 13%, 32%);
     --darkerBorderColor: hsl(214, 13%, 22%);
@@ -30,34 +28,35 @@
     --selectorBackgroundColor: rgb(55, 65, 81);
     --selectorBackgroundColorAlpha: rgba(55, 65, 81, 0.5);
 
-    --activeColorAlpha: rgba(119, 91, 244, 0.9);
-    --activeColor: rgb(119, 91, 244);
+    --activeColorAlpha: rgba(255, 255, 255, 0.1);
+    --activeColor: #e0e0e0;
     --osdSeekBarPlayedColor: var(--textColor);
     --osdSeekBarBufferedColorAlpha: rgba(128, 128, 128, 0.5);
     --osdSeekBarThumbColor: white;
     --tableBodyColor: rgb(31 41 55 / 1);
-    --uiAccentColor: rgb(117 111 226);
+    --uiAccentColor: #e0e0e0;
     --btnMiniPlayColor: rgb(41 154 93);
     --btnMiniPlayBorderColor: rgb(50, 167, 105);
 
     /* Base component colors */
     --btnDeleteColor: rgb(169, 29, 29);
     --btnDeleteBorderColor: rgb(217, 84, 84);
-    --btnSubmitColor: rgb(61, 54, 178);
-    --btnSubmitBorderColor: rgb(117 111 226);
-    --checkboxCheckedBgColor: rgb(79, 70, 229);
-    --highlightOutlineColor: rgb(37, 99, 235);
+    --btnSubmitColor: #262626;
+    --btnSubmitBorderColor: #404040;
+    --checkboxCheckedBgColor: #e0e0e0;
+    --highlightOutlineColor: transparent;
+    --countIndicatorColor: #262626;
 
     --defaultBorder: var(--borderWidth) solid var(--borderColor);
     --defaultLighterBorder: var(--borderWidth) solid var(--lighterBorderColor);
 
     /* dark theme based text colors */
-    --textColor: rgb(209, 213, 219);
-    --dimTextColor: rgb(156, 163, 175);
+    --textColor: #dedede;
+    --dimTextColor: #777777;
 
     /* textures */
-    --backgroundGradient: linear-gradient(0deg, var(--darkerGradientPoint) 35%, var(--lighterGradientPoint));
-    --cardBackgroundGradient: linear-gradient(0deg, var(--darkerGradientPoint), 25%, var(--lighterGradientPoint));
+    --backgroundGradient: #000000;
+    --cardBackgroundGradient: #0a0a0a;
     --headerColorGradient: linear-gradient(180deg, rgba(30, 40, 54, 0.95) 30%, 55%, transparent 90%);
     --headerColorGradientAlt: linear-gradient(180deg, rgba(30, 40, 54, 1), 70%, transparent);
     --headerBlurMask: linear-gradient(180deg, white 50%, 85%, transparent);
@@ -82,10 +81,10 @@
 
     /* standard component sizes */
     --largerRadius: 1.25em;
-    --largeRadius: 1em;
-    --smallRadius: 0.5em;
+    --largeRadius: 14px;
+    --smallRadius: 8px;
     --smallerRadius: 0.375em;
-    --borderWidth: 0.06em;
+    --borderWidth: 0px;
     --borderWidthDouble: 0.12em;
 
     --sidePadding: 3.3%;
@@ -98,7 +97,7 @@
     --blurLarge: blur(10px);
     --blurLargest: blur(20px);
 
-    --shadow: 0.1em 0.1em 0.15em hsla(0, 0%, 0%, 0.3);
+    --shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
 
     /* use "" to enable a fancy blur behind the app header / top bar [default]; 
        use none (without quotes) to disable it */
@@ -1146,6 +1145,7 @@ body {
 
 .starIcon {
     background: linear-gradient(to right, #90cea1, #01b4e4);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-left: -0.125em;
@@ -4166,45 +4166,8 @@ for extended styling, use the add-on */
     display: none !important;
 }
 
-/* ================================================= */
-/* 3. OBSIDIAN MODE (Variables)                     */
-/* ================================================= */
-:root {
-    /* --- VOID PALETTE --- */
-    --darkerGradientPoint: #000000 !important;
-    --lighterGradientPoint: #000000 !important;
-    --headerColor: transparent !important;
-    --drawerColor: #0a0a0a !important;
 
-    /* --- ACCENTS --- */
-    --uiAccentColor: #e0e0e0 !important;
-    --activeColor: #e0e0e0 !important;
-    --activeColorAlpha: rgba(255, 255, 255, 0.1) !important;
-    --highlightOutlineColor: transparent !important;
-
-    /* --- KILL BLUES --- */
-    --btnSubmitColor: #262626 !important;
-    --btnSubmitBorderColor: #404040 !important;
-    --checkboxCheckedBgColor: #e0e0e0 !important;
-    --countIndicatorColor: #262626 !important;
-
-    /* --- TEXT --- */
-    --textColor: #dedede !important;
-    --dimTextColor: #777777 !important;
-
-    /* --- GEOMETRY --- */
-    --largeRadius: 14px !important;
-    --smallRadius: 8px !important;
-    --borderWidth: 0px !important;
-
-    /* --- TEXTURES --- */
-    --backgroundGradient: #000000 !important;
-    --cardBackgroundGradient: #0a0a0a !important;
-    --shadow: 0 20px 50px rgba(0, 0, 0, 0.9) !important;
-}
-
-/* ================================================= */
-/* 4. HEADER INVISIBILITY                           */
+/* HEADER STYLES */
 /* ================================================= */
 .skinHeader,
 .skinHeader-blurred,
@@ -4218,7 +4181,7 @@ for extended styling, use the add-on */
 }
 
 /* ================================================= */
-/* 5. CARD INTERACTION (Borderless Lift)            */
+/* CARD STYLES */
 /* ================================================= */
 .cardScalable,
 .visualCardBox {
@@ -4246,7 +4209,7 @@ for extended styling, use the add-on */
 }
 
 /* ================================================= */
-/* 6. INDICATOR CLEANUP                             */
+/* INDICATORS */
 /* ================================================= */
 .countIndicator,
 .fullSyncIndicator,
@@ -4281,7 +4244,7 @@ for extended styling, use the add-on */
 }
 
 /* ================================================= */
-/* 7. BUTTON & LINK CLEANUP (No Blue)               */
+/* BUTTONS & LINKS */
 /* ================================================= */
 .btnPlay.detailButton {
     background-color: #e0e0e0 !important;
@@ -4333,7 +4296,7 @@ for extended styling, use the add-on */
 }
 
 /* ================================================= */
-/* 8. DETAIL PAGE BLACKOUT (Blue Tint Fix)          */
+/* DETAIL PAGE */
 /* ================================================= */
 
 /* Force all Detail Containers to Transparent/Black */
