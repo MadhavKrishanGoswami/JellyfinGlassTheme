@@ -35,8 +35,8 @@
     --osdSeekBarThumbColor: white;
     --tableBodyColor: rgb(31 41 55 / 1);
     --uiAccentColor: #e0e0e0;
-    --btnMiniPlayColor: rgb(41 154 93);
-    --btnMiniPlayBorderColor: rgb(50, 167, 105);
+    --btnMiniPlayColor: rgba(0, 0, 0, 0.7);
+    --btnMiniPlayBorderColor: rgba(255, 255, 255, 0.2);
 
     /* Base component colors */
     --btnDeleteColor: rgb(169, 29, 29);
@@ -2687,7 +2687,8 @@ div[data-role="controlgroup"] a.ui-btn-active {
     border-radius: var(--smallRadius);
     padding: 1em;
     grid-column: 3 / 5;
-    background-color: var(--lighterGradientPointAlpha);
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: var(--blurDefault);
 }
 
 .layout-mobile .trackSelections {
@@ -3177,10 +3178,12 @@ div[data-role="controlgroup"] a.ui-btn-active {
 .emby-select,
 .emby-input,
 .emby-textarea {
-    background-color: var(--selectorBackgroundColor);
+    background-color: rgba(0, 0, 0, 0.5) !important;
     border: var(--defaultLighterBorder);
     border-radius: var(--smallRadius);
     padding: 0.5em !important;
+    color: white !important;
+    backdrop-filter: blur(10px);
 }
 
 .inputLabelFocused,
@@ -3208,7 +3211,7 @@ div[data-role="controlgroup"] a.ui-btn-active {
 
 .emby-select-withcolor>option {
     color: inherit;
-    background-color: var(--selectorBackgroundColor);
+    background-color: #000000 !important;
 }
 
 .inputContainer .emby-input-iconbutton {
@@ -4338,15 +4341,23 @@ for extended styling, use the add-on */
 }
 
 /* Font Smoothing */
+/* Apple System Font Stack */
 body,
 h1,
 h2,
 h3,
 h4,
+h5,
+h6,
 p,
 div,
-span {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", sans-serif !important;
-    letter-spacing: -0.01em !important;
+span,
+button,
+input,
+textarea,
+select {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    letter-spacing: -0.015em !important;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
