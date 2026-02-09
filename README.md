@@ -3,9 +3,9 @@
 A modern, glassmorphism-inspired theme for Jellyfin that brings a sleek, translucent aesthetic to your media server.
 
 <div align="center">
-  <video src="preview.mov" width="100%" controls autoplay loop muted></video>
+  <video src="preview.mp4" width="100%" controls autoplay loop muted></video>
   <br/>
-  <em>(If the video doesn't play, you can <a href="preview.mov">download it here</a>)</em>
+  <em>(If the video doesn't play, you can <a href="preview.mp4">download it here</a>)</em>
 </div>
 
 ## 🧩 Recommended Plugin
@@ -41,6 +41,10 @@ If you prefer to self-host the CSS:
 
 1. Download the `theme.css` file from this repository.
 2. Host it on your server or paste the full contents into the **Custom CSS Code** box.
+
+## 💡 Inspiration
+
+This theme is heavily inspired by the beautiful [ElegantFin](https://github.com/lscambo13/ElegantFin) theme.
 
 ## 🤝 Contributing
 
