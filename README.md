@@ -3,9 +3,9 @@
 A modern, glassmorphism-inspired theme for Jellyfin that brings a sleek, translucent aesthetic to your media server.
 
 <div align="center">
-  <video src="preview.mp4" width="100%" controls autoplay loop muted></video>
+  <img src="preview.gif" width="100%" alt="Theme Preview">
   <br/>
-  <em>(If the video doesn't play, you can <a href="preview.mp4">download it here</a>)</em>
+  <em>(High quality video: <a href="preview.mp4">download here</a>)</em>
 </div>
 
 ## 🧩 Recommended Plugin
