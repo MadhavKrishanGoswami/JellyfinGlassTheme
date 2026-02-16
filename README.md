@@ -23,7 +23,7 @@ Installation is simple and requires just one line of code.
 3. Paste the following line into the box:
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/MadhavKrishanGoswami/JellyfinGlassTheme@main/theme.css");
+@import url("https://cdn.jsdelivr.net/gh/MadhavKrishanGoswami/JellyfinGlassTheme@main/theme.min.css");
 ```
 
 4. Scroll down and click **Save**.
